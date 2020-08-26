@@ -1,0 +1,2 @@
+INSERT INTO UNIDADE (ID, DESCRICAO, NOME)
+VALUES (1, 'Primeira Unidade', 'Unit I');

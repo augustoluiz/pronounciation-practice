@@ -1,5 +1,6 @@
 package com.icw.pronounciationpractice.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,6 +10,7 @@ import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.List;
 
 @Entity
 @Getter
@@ -31,6 +33,11 @@ public class Questao {
     private Exercicio exercicio;
 
     @OneToMany
-    private QuestoesVideos questoesVideos;
+    @JsonIgnore
+    private List<QuestoesVideos> questoesVideos;
+
+    @OneToMany
+    @JsonIgnore
+    private List<UsuarioQuestao> usuarioQuestao;
 
 }

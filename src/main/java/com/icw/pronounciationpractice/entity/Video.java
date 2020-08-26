@@ -1,5 +1,6 @@
 package com.icw.pronounciationpractice.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -39,5 +40,6 @@ public class Video {
     private String descricao;
 
     @OneToMany
+    @JsonIgnore
     private List<QuestoesVideos> questoesVideos;
 }
