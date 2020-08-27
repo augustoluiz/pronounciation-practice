@@ -13,9 +13,9 @@ import javax.persistence.Entity;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class QuestoesVideos {
+public class QuestoesAudios {
 
     @EmbeddedId
-    private QuestoesVideosId id;
+    private QuestoesAudiosId id;
 
 }

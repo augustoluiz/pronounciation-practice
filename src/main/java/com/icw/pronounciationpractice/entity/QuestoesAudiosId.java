@@ -14,10 +14,10 @@ import java.io.Serializable;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class QuestoesVideosId implements Serializable {
+public class QuestoesAudiosId implements Serializable {
 
     @ManyToOne
-    private Video video;
+    private Audio audio;
 
     @ManyToOne
     private Questao questao;

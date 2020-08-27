@@ -17,7 +17,7 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Video {
+public class Audio {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -41,5 +41,5 @@ public class Video {
 
     @OneToMany
     @JsonIgnore
-    private List<QuestoesVideos> questoesVideos;
+    private List<QuestoesAudios> questoesAudios;
 }

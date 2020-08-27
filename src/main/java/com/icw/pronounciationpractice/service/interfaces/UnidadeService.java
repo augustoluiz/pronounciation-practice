@@ -11,6 +11,4 @@ public interface UnidadeService {
 
     Optional<Unidade> findById(Long id);
 
-    Unidade save(Unidade unidade);
-
 }

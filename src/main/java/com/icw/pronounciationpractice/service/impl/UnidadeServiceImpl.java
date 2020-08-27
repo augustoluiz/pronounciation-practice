@@ -25,8 +25,4 @@ public class UnidadeServiceImpl implements UnidadeService {
         return unidadeRepository.findById(id);
     }
 
-    @Override
-    public Unidade save(Unidade unidade) {
-        return unidadeRepository.save(unidade);
-    }
 }

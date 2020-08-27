@@ -34,7 +34,7 @@ public class Questao {
 
     @OneToMany
     @JsonIgnore
-    private List<QuestoesVideos> questoesVideos;
+    private List<QuestoesAudios> questoesVideos;
 
     @OneToMany
     @JsonIgnore
