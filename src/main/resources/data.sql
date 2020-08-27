@@ -2,4 +2,7 @@ INSERT INTO UNIDADE (ID, DESCRICAO, NOME)
 VALUES (1, 'Primeira Unidade', 'Unit I');
 
 INSERT INTO AUDIO (ID, DESCRICAO, LINK, TITULO)
-VALUES (1, 'VIDEO 1 DA UNIT 1', 'https://www.youtube.com/watch?v=12GiF4EWrcQ', 'The Batman')
+VALUES (1, 'VIDEO 1 DA UNIT 1', 'https://www.youtube.com/watch?v=12GiF4EWrcQ', 'The Batman');
+
+INSERT INTO EXERCICIO (ID, ORDEM_APRESENTACAO, TITULO, UNIDADE_ID)
+VALUES (1, 1, 'EXERCICIO 1 - UNIT 1', 1);
