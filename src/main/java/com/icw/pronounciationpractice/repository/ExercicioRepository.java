@@ -12,7 +12,8 @@ import java.util.List;
 public interface ExercicioRepository extends JpaRepository<Exercicio, Long> {
 
     @Query(value = "SELECT * FROM EXERCICIO \n" +
-            "WHERE UNIDADE_ID = :unidadeId", nativeQuery = true)
+            "WHERE UNIDADE_ID = :unidadeId \n"+
+            "ORDER BY ORDEM_APRESENTACAO ASC", nativeQuery = true)
     List<Exercicio> findByUnidadeId(@Param("unidadeId") Long unidadeId);
 
 }
