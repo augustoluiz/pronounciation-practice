@@ -1,6 +1,8 @@
 package com.icw.pronounciationpractice.endpoints;
 
-import com.icw.pronounciationpractice.entity.Exercicio;
+import com.icw.pronounciationpractice.dto.ExercicioDTO;
+
+import com.icw.pronounciationpractice.mapper.ExercicioMapper;
 import com.icw.pronounciationpractice.service.interfaces.ExercicioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,14 +19,22 @@ public class ExercicioController {
     @Autowired
     private ExercicioService exercicioService;
 
+    @Autowired
+    private ExercicioMapper exercicioMapper;
+
     @GetMapping
-    public List<Exercicio> findAll(){
-        return exercicioService.findAll();
+    public List<ExercicioDTO> findAll(){
+        return exercicioMapper.map(exercicioService.findAll());
     }
 
     @GetMapping("/{id}")
-    public Exercicio findById(@PathVariable("id") Long id){
-        return exercicioService.findById(id).orElse(null);
+    public ExercicioDTO findById(@PathVariable("id") Long id){
+        return exercicioService.findById(id).map(exercicioMapper::map).orElse(null);
+    }
+
+    @GetMapping("/unidade/{id}")
+    public List<ExercicioDTO> findByUnidadeId(@PathVariable("id") Long id){
+        return exercicioMapper.map(exercicioService.findByUnidadeId(id));
     }
 
 }

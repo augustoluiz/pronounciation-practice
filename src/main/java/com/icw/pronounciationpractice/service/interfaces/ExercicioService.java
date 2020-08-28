@@ -11,4 +11,6 @@ public interface ExercicioService {
 
     Optional<Exercicio> findById(Long id);
 
+    List<Exercicio> findByUnidadeId(Long unidadeId);
+
 }

@@ -24,4 +24,9 @@ public class ExercicioServiceImpl implements ExercicioService {
     public Optional<Exercicio> findById(Long id) {
         return exercicioRepository.findById(id);
     }
+
+    @Override
+    public List<Exercicio> findByUnidadeId(Long unidadeId) {
+        return exercicioRepository.findByUnidadeId(unidadeId);
+    }
 }

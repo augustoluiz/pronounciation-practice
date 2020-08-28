@@ -36,4 +36,46 @@ public class Unidade {
     @OneToMany
     @JsonIgnore
     private List<Exercicio> exercicios;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public List<Exercicio> getExercicios() {
+        return exercicios;
+    }
+
+    public void setExercicios(List<Exercicio> exercicios) {
+        this.exercicios = exercicios;
+    }
+
+    @Override
+    public String toString() {
+        return "Unidade{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", descricao='" + descricao + '\'' +
+                ", exercicios=" + exercicios +
+                '}';
+    }
 }

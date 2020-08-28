@@ -40,4 +40,43 @@ public class Exercicio {
     @OneToMany
     private List<Questao> questao;
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public int getOrdemApresentacao() {
+        return ordemApresentacao;
+    }
+
+    public void setOrdemApresentacao(int ordemApresentacao) {
+        this.ordemApresentacao = ordemApresentacao;
+    }
+
+    public Unidade getUnidade() {
+        return unidade;
+    }
+
+    public void setUnidade(Unidade unidade) {
+        this.unidade = unidade;
+    }
+
+    public List<Questao> getQuestao() {
+        return questao;
+    }
+
+    public void setQuestao(List<Questao> questao) {
+        this.questao = questao;
+    }
 }

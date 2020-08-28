@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class PronounciationPracticeApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(PronounciationPracticeApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(PronounciationPracticeApplication.class, args);
+    }
 
 }
