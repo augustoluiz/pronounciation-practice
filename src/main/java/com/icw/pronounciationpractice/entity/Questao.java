@@ -29,6 +29,11 @@ public class Questao {
     @NotEmpty
     private String texto;
 
+    @Column
+    @Size(min = 0)
+    @NotNull
+    private int ordemApresentacao;
+
     @ManyToOne
     private Exercicio exercicio;
 
