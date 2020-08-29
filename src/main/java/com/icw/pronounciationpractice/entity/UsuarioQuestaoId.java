@@ -22,4 +22,27 @@ public class UsuarioQuestaoId implements Serializable {
     @ManyToOne
     private Questao questao;
 
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
+
+    public Questao getQuestao() {
+        return questao;
+    }
+
+    public void setQuestao(Questao questao) {
+        this.questao = questao;
+    }
+
+    @Override
+    public String toString() {
+        return "UsuarioQuestaoId{" +
+                "usuario=" + usuario +
+                ", questao=" + questao +
+                '}';
+    }
 }
