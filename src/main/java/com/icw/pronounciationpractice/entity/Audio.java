@@ -42,4 +42,55 @@ public class Audio {
     @OneToMany
     @JsonIgnore
     private List<QuestoesAudios> questoesAudios;
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getLink() {
+        return link;
+    }
+
+    public void setLink(String link) {
+        this.link = link;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public void setDescricao(String descricao) {
+        this.descricao = descricao;
+    }
+
+    public List<QuestoesAudios> getQuestoesAudios() {
+        return questoesAudios;
+    }
+
+    public void setQuestoesAudios(List<QuestoesAudios> questoesAudios) {
+        this.questoesAudios = questoesAudios;
+    }
+
+    @Override
+    public String toString() {
+        return "Audio{" +
+                "id=" + id +
+                ", link='" + link + '\'' +
+                ", titulo='" + titulo + '\'' +
+                ", descricao='" + descricao + '\'' +
+                ", questoesAudios=" + questoesAudios +
+                '}';
+    }
 }

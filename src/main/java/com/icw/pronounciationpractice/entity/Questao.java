@@ -35,14 +35,74 @@ public class Questao {
     private int ordemApresentacao;
 
     @ManyToOne
+    @JsonIgnore
     private Exercicio exercicio;
 
     @OneToMany
     @JsonIgnore
-    private List<QuestoesAudios> questoesVideos;
+    private List<QuestoesAudios> questoesAudios;
 
     @OneToMany
     @JsonIgnore
     private List<UsuarioQuestao> usuarioQuestao;
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getTexto() {
+        return texto;
+    }
+
+    public void setTexto(String texto) {
+        this.texto = texto;
+    }
+
+    public int getOrdemApresentacao() {
+        return ordemApresentacao;
+    }
+
+    public void setOrdemApresentacao(int ordemApresentacao) {
+        this.ordemApresentacao = ordemApresentacao;
+    }
+
+    public Exercicio getExercicio() {
+        return exercicio;
+    }
+
+    public void setExercicio(Exercicio exercicio) {
+        this.exercicio = exercicio;
+    }
+
+    public List<QuestoesAudios> getQuestoesAudios() {
+        return questoesAudios;
+    }
+
+    public void setQuestoesAudios(List<QuestoesAudios> questoesAudios) {
+        this.questoesAudios = questoesAudios;
+    }
+
+    public List<UsuarioQuestao> getUsuarioQuestao() {
+        return usuarioQuestao;
+    }
+
+    public void setUsuarioQuestao(List<UsuarioQuestao> usuarioQuestao) {
+        this.usuarioQuestao = usuarioQuestao;
+    }
+
+    @Override
+    public String toString() {
+        return "Questao{" +
+                "id=" + id +
+                ", texto='" + texto + '\'' +
+                ", ordemApresentacao=" + ordemApresentacao +
+                ", exercicio=" + exercicio +
+                ", questoesVideos=" + questoesAudios +
+                ", usuarioQuestao=" + usuarioQuestao +
+                '}';
+    }
 }

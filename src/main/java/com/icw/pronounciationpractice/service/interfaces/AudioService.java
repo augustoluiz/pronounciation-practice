@@ -11,4 +11,6 @@ public interface AudioService {
 
     Optional<Audio> findById(Long id);
 
+    List<Audio> findByQuestaoId(Long id);
+
 }

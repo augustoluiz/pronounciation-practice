@@ -24,4 +24,9 @@ public class AudioServiceImpl implements AudioService {
     public Optional<Audio> findById(Long id) {
         return audioRepository.findById(id);
     }
+
+    @Override
+    public List<Audio> findByQuestaoId(Long id) {
+        return audioRepository.findByQuestaoId(id);
+    }
 }
