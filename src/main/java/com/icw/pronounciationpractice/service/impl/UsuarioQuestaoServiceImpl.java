@@ -1,6 +1,5 @@
 package com.icw.pronounciationpractice.service.impl;
 
-import com.icw.pronounciationpractice.dto.UsuarioQuestaoDTO;
 import com.icw.pronounciationpractice.entity.UsuarioQuestao;
 import com.icw.pronounciationpractice.repository.UsuarioQuestaoRepository;
 import com.icw.pronounciationpractice.service.interfaces.UsuarioQuestaoService;

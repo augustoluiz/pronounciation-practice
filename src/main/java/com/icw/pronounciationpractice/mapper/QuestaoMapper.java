@@ -2,10 +2,7 @@ package com.icw.pronounciationpractice.mapper;
 
 import com.icw.pronounciationpractice.dto.QuestaoDTO;
 import com.icw.pronounciationpractice.entity.Questao;
-import com.icw.pronounciationpractice.service.impl.AudioServiceImpl;
-import com.icw.pronounciationpractice.service.interfaces.AudioService;
 import org.mapstruct.Mapper;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 import java.util.stream.Collectors;
