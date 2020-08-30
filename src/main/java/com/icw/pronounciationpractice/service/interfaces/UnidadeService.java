@@ -11,4 +11,8 @@ public interface UnidadeService {
 
     Optional<Unidade> findById(Long id);
 
+    Integer qtdTotalQuestoesPorUnidadeId(Long unidadeId);
+
+    Integer qtdTotalQuestoesCertasPorUnidadeId(Long usuarioId, Long unidadeId);
+
 }

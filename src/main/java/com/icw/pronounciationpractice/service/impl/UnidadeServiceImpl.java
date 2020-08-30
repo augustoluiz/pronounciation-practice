@@ -12,6 +12,8 @@ import java.util.Optional;
 @Service
 public class UnidadeServiceImpl implements UnidadeService {
 
+    private final float VALOR_MINIMO_CORRETO = 0.70f;
+
     @Autowired
     private UnidadeRepository unidadeRepository;
 
@@ -23,6 +25,16 @@ public class UnidadeServiceImpl implements UnidadeService {
     @Override
     public Optional<Unidade> findById(Long id) {
         return unidadeRepository.findById(id);
+    }
+
+    @Override
+    public Integer qtdTotalQuestoesPorUnidadeId(Long unidadeId) {
+        return unidadeRepository.qtdTotalQuestoesPorUnidadeId(unidadeId);
+    }
+
+    @Override
+    public Integer qtdTotalQuestoesCertasPorUnidadeId(Long usuarioId, Long unidadeId) {
+        return unidadeRepository.qtdTotalQuestoesCertasPorUnidadeId(usuarioId, unidadeId, VALOR_MINIMO_CORRETO);
     }
 
 }
