@@ -13,4 +13,8 @@ public interface QuestaoService {
 
     Optional<List<Questao>> findByExercicioId(Long id);
 
+    Integer findQtdTotalByExercicioId(Long exercicioId);
+
+    Integer findQtdConcluidoByExercicioId(Long usuarioId, Long exercicioId);
+
 }

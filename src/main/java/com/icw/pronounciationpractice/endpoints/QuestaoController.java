@@ -1,7 +1,5 @@
 package com.icw.pronounciationpractice.endpoints;
 
-
-
 import com.icw.pronounciationpractice.dto.AudioDTO;
 import com.icw.pronounciationpractice.dto.QuestaoDTO;
 import com.icw.pronounciationpractice.mapper.AudioMapper;
@@ -57,6 +55,17 @@ public class QuestaoController {
                     questao.forEach(e -> e.setAudios(findAudiosByQuestionId(e.getId())));
                     return questao;
                 }).orElse(null);
+    }
+
+    @GetMapping("/totalByExercicio/{exercicioId}")
+    public Integer findQtdTotalByExercicioId(@PathVariable("exercicioId") Long exercicioId){
+        return questaoService.findQtdTotalByExercicioId(exercicioId);
+    }
+
+    @GetMapping("/concluidoByExercicio/{exercicioId}")
+    public Integer findQtdConcluidoByExercicioId(@RequestParam(required = true) Long usuarioId,
+                                                 @PathVariable("exercicioId") Long exercicioId){
+        return questaoService.findQtdConcluidoByExercicioId(usuarioId, exercicioId);
     }
 
     private List<AudioDTO> findAudiosByQuestionId(Long questionId){

@@ -12,6 +12,8 @@ import java.util.Optional;
 @Service
 public class QuestaoServiceImpl implements QuestaoService {
 
+    private final float VALOR_MINIMO_CORRETO = 0.70f;
+
     @Autowired
     private QuestaoRepository questaoRepository;
 
@@ -29,5 +31,15 @@ public class QuestaoServiceImpl implements QuestaoService {
     @Override
     public Optional<List<Questao>> findByExercicioId(Long id) {
         return questaoRepository.findByExercicioId(id);
+    }
+
+    @Override
+    public Integer findQtdTotalByExercicioId(Long exercicioId) {
+        return questaoRepository.findQtdTotalByExercicioId(exercicioId);
+    }
+
+    @Override
+    public Integer findQtdConcluidoByExercicioId(Long usuarioId, Long exercicioId) {
+        return questaoRepository.findQtdConcluidoByExercicioId(exercicioId, usuarioId, VALOR_MINIMO_CORRETO);
     }
 }
