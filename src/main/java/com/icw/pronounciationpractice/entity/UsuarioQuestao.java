@@ -27,9 +27,9 @@ public class UsuarioQuestao {
     private UsuarioQuestaoId id;
 
     @Column
-    @Size(min = 0, max = 1)
+    @Size(min = 0, max = 100)
     @NotNull
-    private float pontuacao;
+    private int pontuacao;
 
     @Column
     @CreatedDate
@@ -44,11 +44,11 @@ public class UsuarioQuestao {
         this.id = id;
     }
 
-    public float getPontuacao() {
+    public int getPontuacao() {
         return pontuacao;
     }
 
-    public void setPontuacao(float pontuacao) {
+    public void setPontuacao(int pontuacao) {
         this.pontuacao = pontuacao;
     }
 

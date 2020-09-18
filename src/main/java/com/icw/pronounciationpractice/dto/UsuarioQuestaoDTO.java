@@ -15,7 +15,7 @@ public class UsuarioQuestaoDTO {
 
     private Long usuarioId;
     private Long questaoId;
-    private float pontuacao;
+    private int pontuacao;
     private LocalDateTime dataAtualizacao;
 
     public Long getUsuarioId() {
@@ -34,11 +34,11 @@ public class UsuarioQuestaoDTO {
         this.questaoId = questaoId;
     }
 
-    public float getPontuacao() {
+    public int getPontuacao() {
         return pontuacao;
     }
 
-    public void setPontuacao(float pontuacao) {
+    public void setPontuacao(int pontuacao) {
         this.pontuacao = pontuacao;
     }
 

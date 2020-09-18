@@ -8,4 +8,6 @@ public interface UsuarioQuestaoService {
     Optional<UsuarioQuestao> findByQuestaoId(Long usuarioId, Long questaoId);
 
     UsuarioQuestao save(UsuarioQuestao usuarioQuestao);
+
+    int calculateStatusByQuestionId(Long usuarioId, Long questionId);
 }

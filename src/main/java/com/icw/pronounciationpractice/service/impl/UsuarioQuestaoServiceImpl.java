@@ -1,5 +1,6 @@
 package com.icw.pronounciationpractice.service.impl;
 
+import com.icw.pronounciationpractice.dto.UsuarioQuestaoDTO;
 import com.icw.pronounciationpractice.entity.UsuarioQuestao;
 import com.icw.pronounciationpractice.repository.UsuarioQuestaoRepository;
 import com.icw.pronounciationpractice.service.interfaces.UsuarioQuestaoService;
@@ -22,5 +23,10 @@ public class UsuarioQuestaoServiceImpl implements UsuarioQuestaoService {
     @Override
     public UsuarioQuestao save(UsuarioQuestao usuarioQuestao) {
         return usuarioQuestaoRepository.save(usuarioQuestao);
+    }
+
+    @Override
+    public int calculateStatusByQuestionId(Long usuarioId, Long questaoId) {
+        return usuarioQuestaoRepository.calculateStatusByQuestionId(usuarioId, questaoId).orElse(0);
     }
 }

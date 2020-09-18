@@ -17,10 +17,19 @@ public class QuestaoDTO {
     private String texto;
     private int ordemApresentacao;
     private Long exercicioId;
+    private Float stauts;
     private List<AudioDTO> audios;
 
     public Long getId() {
         return id;
+    }
+
+    public Float getStauts() {
+        return stauts;
+    }
+
+    public void setStauts(Float stauts) {
+        this.stauts = stauts;
     }
 
     public void setId(Long id) {

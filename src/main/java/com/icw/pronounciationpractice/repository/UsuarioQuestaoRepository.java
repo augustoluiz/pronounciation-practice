@@ -16,4 +16,9 @@ public interface UsuarioQuestaoRepository extends JpaRepository<UsuarioQuestao, 
     Optional<UsuarioQuestao> findByQuestaoId(@Param("usuarioId") Long usuarioId,
                                              @Param("questaoId") Long questaoId);
 
+    @Query(value = "SELECT PONTUACAO FROM USUARIO_QUESTAO " +
+            "WHERE USUARIO_ID = :usuarioId " +
+            "AND QUESTAO_ID = :questionId", nativeQuery = true)
+    Optional<Integer> calculateStatusByQuestionId(@Param("usuarioId") Long usuarioId,
+                                                @Param("questionId") Long questionId);
 }

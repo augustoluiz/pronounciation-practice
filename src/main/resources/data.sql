@@ -2,19 +2,19 @@ INSERT INTO UNIDADE (ID, DESCRICAO, NOME)
 VALUES (1, 'Primeira Unidade', 'Unit I');
 
 INSERT INTO AUDIO (ID, DESCRICAO, LINK, TITULO)
-VALUES (1, 'VIDEO 1 DA UNIT 1', 'https://www.youtube.com/watch?v=12GiF4EWrcQ', 'The Batman');
+VALUES (1, 'VIDEO 1 DA UNIT 1', 'https://www.youtube.com/embed/12GiF4EWrcQ', 'The Batman');
 
 INSERT INTO AUDIO (ID, DESCRICAO, LINK, TITULO)
-VALUES (2, 'VIDEO 2 DA UNIT 1', 'https://www.youtube.com/watch?v=12GiF4EWrcQ', 'The Batman2');
+VALUES (2, 'VIDEO 2 DA UNIT 1', 'https://www.youtube.com/embed/12GiF4EWrcQ', 'The Batman2');
 
 INSERT INTO AUDIO (ID, DESCRICAO, LINK, TITULO)
-VALUES (3, 'VIDEO 3 DA UNIT 1', 'https://www.youtube.com/watch?v=12GiF4EWrcQ', 'The Batman3');
+VALUES (3, 'VIDEO 3 DA UNIT 1', 'https://www.youtube.com/embed/12GiF4EWrcQ', 'The Batman3');
 
 INSERT INTO AUDIO (ID, DESCRICAO, LINK, TITULO)
-VALUES (4, 'VIDEO 4 DA UNIT 1', 'https://www.youtube.com/watch?v=12GiF4EWrcQ', 'The Batman4');
+VALUES (4, 'VIDEO 4 DA UNIT 1', 'https://www.youtube.com/embed/12GiF4EWrcQ', 'The Batman4');
 
 INSERT INTO AUDIO (ID, DESCRICAO, LINK, TITULO)
-VALUES (5, 'VIDEO 5 DA UNIT 1', 'https://www.youtube.com/watch?v=12GiF4EWrcQ', 'The Batman5');
+VALUES (5, 'VIDEO 5 DA UNIT 1', 'https://www.youtube.com/embed/12GiF4EWrcQ', 'The Batman5');
 
 INSERT INTO EXERCICIO (ID, ORDEM_APRESENTACAO, TITULO, UNIDADE_ID)
 VALUES (1, 1, 'EXERCICIO 1 - UNIT 1', 1);
@@ -53,8 +53,8 @@ INSERT INTO USUARIO (ID, DATA_CRIACAO, NOME)
 VALUES (1, '2020-07-18', 'augusto@gmail.com');
 
 INSERT INTO USUARIO_QUESTAO (DATA_ATUALIZACAO, PONTUACAO, QUESTAO_ID, USUARIO_ID)
-VALUES ('2020-08-29', 0.70, 1, 1);
+VALUES ('2020-08-29', 70, 1, 1);
 INSERT INTO USUARIO_QUESTAO (DATA_ATUALIZACAO, PONTUACAO, QUESTAO_ID, USUARIO_ID)
-VALUES ('2020-08-29', 0.80, 2, 1);
+VALUES ('2020-08-29', 80, 2, 1);
 INSERT INTO USUARIO_QUESTAO (DATA_ATUALIZACAO, PONTUACAO, QUESTAO_ID, USUARIO_ID)
-VALUES ('2020-08-29', 0.40, 3, 1);
+VALUES ('2020-08-29', 40, 3, 1);
