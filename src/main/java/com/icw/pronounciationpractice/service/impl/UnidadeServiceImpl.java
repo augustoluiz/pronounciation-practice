@@ -37,4 +37,9 @@ public class UnidadeServiceImpl implements UnidadeService {
         return unidadeRepository.qtdTotalQuestoesCertasPorUnidadeId(usuarioId, unidadeId, VALOR_MINIMO_CORRETO);
     }
 
+    @Override
+    public Optional<String> findNomebyId(Long id){
+        return unidadeRepository.findNomebyId(id);
+    }
+
 }

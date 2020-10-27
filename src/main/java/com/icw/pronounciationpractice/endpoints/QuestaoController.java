@@ -43,24 +43,25 @@ public class QuestaoController {
     }
 
     @GetMapping("/{id}")
-    public QuestaoDTO findById(@PathVariable("id") Long id){
+    public QuestaoDTO findById(@PathVariable("id") Long id,
+                               @RequestParam(required = true) Long usuarioId){
         return questaoService.findById(id)
                 .map(questaoMapper::map)
                 .map(questao -> {
-                    questao.setStauts(calculateStatusByQuestionId(1L, questao.getId()));
+                    questao.setStauts(calculateStatusByQuestionId(usuarioId, questao.getId()));
                     questao.setAudios(findAudiosByQuestionId(questao.getId()));
                     return questao;
                 }).orElse(null);
     }
 
     @GetMapping("/exercicio/{id}")
-
-    public List<QuestaoDTO> findByExercicioId(@PathVariable("id") Long id){
+    public List<QuestaoDTO> findByExercicioId(@PathVariable("id") Long id,
+                                              @RequestParam(required = true) Long usuarioId){
         return questaoService.findByExercicioId(id).map(questaoMapper::map)
                 .map(questao -> {
                     questao.forEach(e -> {
                         e.setAudios(findAudiosByQuestionId(e.getId()));
-                        e.setStauts(calculateStatusByQuestionId(1L, e.getId()));
+                        e.setStauts(calculateStatusByQuestionId(usuarioId, e.getId()));
                     });
                     return questao;
                 }).orElse(null);

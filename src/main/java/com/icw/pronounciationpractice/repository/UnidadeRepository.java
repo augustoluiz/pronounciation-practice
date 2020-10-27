@@ -6,6 +6,8 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import java.util.Optional;
+
 @Repository
 public interface UnidadeRepository extends JpaRepository<Unidade, Long> {
 
@@ -31,4 +33,7 @@ public interface UnidadeRepository extends JpaRepository<Unidade, Long> {
     Integer qtdTotalQuestoesCertasPorUnidadeId(@Param("usuarioId") Long usuarioId,
                                                @Param("unidadeId") Long unidadeId,
                                                @Param("valorMinimoCorreto") float valorMinimoCorreto);
+
+    @Query(value = "SELECT NOME FROM UNIDADE WHERE ID = :id", nativeQuery = true)
+    Optional<String> findNomebyId(@Param("id") Long id);
 }

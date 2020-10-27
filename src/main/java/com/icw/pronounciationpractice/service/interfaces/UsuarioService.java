@@ -8,4 +8,5 @@ public interface UsuarioService {
 
     Optional<Usuario> findById(Long id);
 
+    Optional<Long> findIdByLoginSenha(String usuarioLogin, String usuarioSenha);
 }

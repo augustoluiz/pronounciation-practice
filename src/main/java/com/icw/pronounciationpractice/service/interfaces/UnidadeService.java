@@ -15,4 +15,6 @@ public interface UnidadeService {
 
     Integer qtdTotalQuestoesCertasPorUnidadeId(Long usuarioId, Long unidadeId);
 
+    Optional<String> findNomebyId(Long id);
+
 }

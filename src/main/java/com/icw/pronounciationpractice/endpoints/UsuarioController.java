@@ -17,4 +17,9 @@ public class UsuarioController {
         return usuarioService.findById(id).orElse(null);
     }
 
+    @GetMapping("/findIdByLoginSenha")
+    public Long findIdByLoginSenha(@RequestParam(required = true) String usuarioLogin, String usuarioSenha){
+        return usuarioService.findIdByLoginSenha(usuarioLogin, usuarioSenha).orElse(null);
+    }
+
 }

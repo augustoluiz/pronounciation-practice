@@ -1,12 +1,15 @@
 package com.icw.pronounciationpractice.endpoints;
 
 import com.icw.pronounciationpractice.dto.UnidadeDTO;
+import com.icw.pronounciationpractice.dto.UnidadeNomeDTO;
 import com.icw.pronounciationpractice.entity.Unidade;
 import com.icw.pronounciationpractice.mapper.UnidadeMapper;
 import com.icw.pronounciationpractice.service.interfaces.UnidadeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -36,6 +39,13 @@ public class UnidadeController {
                 .map(unidadeMapper::map)
                 .map(unidadeDTO -> addStatus(unidadeDTO, usuarioId))
                 .orElse(null);
+    }
+
+    @GetMapping("/nome/{id}")
+    public UnidadeNomeDTO findNomebyId(@PathVariable("id") Long id){
+        UnidadeNomeDTO unidadeNomeDTO = new UnidadeNomeDTO();
+        unidadeNomeDTO.setNome(unidadeService.findNomebyId(id).orElse(""));
+        return unidadeNomeDTO;
     }
 
     private UnidadeDTO addStatus(UnidadeDTO unidadeDTO, Long usuarioId){
