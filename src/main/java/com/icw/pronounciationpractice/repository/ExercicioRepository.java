@@ -16,11 +16,8 @@ public interface ExercicioRepository extends JpaRepository<Exercicio, Long> {
             "ORDER BY ORDEM_APRESENTACAO ASC", nativeQuery = true)
     List<Exercicio> findByUnidadeId(@Param("unidadeId") Long unidadeId);
 
-    @Query(value = "SELECT COUNT(*) FROM USUARIO_QUESTAO AS USQ INNER JOIN QUESTAO AS QUE\n" +
-            "ON (USQ.QUESTAO_ID = QUE.ID)\n" +
-            "INNER JOIN EXERCICIO AS EXE\n" +
-            "ON (QUE.EXERCICIO_ID = EXE.ID)\n" +
-            "WHERE EXE.ID = :id", nativeQuery = true)
+    @Query(value = "SELECT COUNT(*) FROM QUESTAO\n" +
+            "WHERE EXERCICIO_ID = :id", nativeQuery = true)
     Integer qtdTotalQuestoesPorExercicioId(@Param("id") Long id);
 
     @Query(value = "SELECT COUNT(*) FROM USUARIO_QUESTAO AS USQ INNER JOIN QUESTAO AS QUE\n" +

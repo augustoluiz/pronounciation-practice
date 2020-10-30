@@ -12,7 +12,7 @@ import java.util.Optional;
 @Service
 public class ExercicioServiceImpl implements ExercicioService {
 
-    private final float VALOR_MINIMO_CORRETO = 0.70f;
+    private final float VALOR_MINIMO_CORRETO = 70;
 
     @Autowired
     private ExercicioRepository exercicioRepository;
