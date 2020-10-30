@@ -48,6 +48,17 @@ public class UnidadeController {
         return unidadeNomeDTO;
     }
 
+    @GetMapping("/totalQuestaoById/{id}")
+    public Integer totalQuestaoById(@PathVariable("id") Long id){
+        return unidadeService.qtdTotalQuestoesPorUnidadeId(id);
+    }
+
+    @GetMapping("/totalQuestaoCertaById/{unidadeId}/{usuarioId}")
+    public Integer totalQuestaoById(@PathVariable("unidadeId") Long unidadeId,
+                                    @PathVariable("usuarioId") Long usuarioId){
+        return unidadeService.qtdTotalQuestoesCertasPorUnidadeId(usuarioId, unidadeId);
+    }
+
     private UnidadeDTO addStatus(UnidadeDTO unidadeDTO, Long usuarioId){
         Integer qtdTotal = unidadeService.qtdTotalQuestoesPorUnidadeId(unidadeDTO.getId());
         if (qtdTotal != 0){
