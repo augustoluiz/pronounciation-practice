@@ -13,4 +13,8 @@ public interface ExercicioService {
 
     List<Exercicio> findByUnidadeId(Long unidadeId);
 
+    Integer qtdTotalQuestoesPorExercicioId(Long id);
+
+    Integer qtdTotalQuestoesPorExercicioId(Long usuarioId, Long id);
+
 }

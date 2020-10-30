@@ -67,17 +67,6 @@ public class QuestaoController {
                 }).orElse(null);
     }
 
-    @GetMapping("/totalByExercicio/{exercicioId}")
-    public Integer findQtdTotalByExercicioId(@PathVariable("exercicioId") Long exercicioId){
-        return questaoService.findQtdTotalByExercicioId(exercicioId);
-    }
-
-    @GetMapping("/concluidoByExercicio/{exercicioId}")
-    public Integer findQtdConcluidoByExercicioId(@RequestParam(required = true) Long usuarioId,
-                                                 @PathVariable("exercicioId") Long exercicioId){
-        return questaoService.findQtdConcluidoByExercicioId(usuarioId, exercicioId);
-    }
-
     private List<AudioDTO> findAudiosByQuestionId(Long questionId){
        return audioMapper.map(audioService.findByQuestaoId(questionId));
     }

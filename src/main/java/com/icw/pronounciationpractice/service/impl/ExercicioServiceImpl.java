@@ -12,6 +12,8 @@ import java.util.Optional;
 @Service
 public class ExercicioServiceImpl implements ExercicioService {
 
+    private final float VALOR_MINIMO_CORRETO = 0.70f;
+
     @Autowired
     private ExercicioRepository exercicioRepository;
 
@@ -29,4 +31,15 @@ public class ExercicioServiceImpl implements ExercicioService {
     public List<Exercicio> findByUnidadeId(Long unidadeId) {
         return exercicioRepository.findByUnidadeId(unidadeId);
     }
+
+    @Override
+    public Integer qtdTotalQuestoesPorExercicioId(Long id) {
+        return exercicioRepository.qtdTotalQuestoesPorExercicioId(id);
+    }
+
+    @Override
+    public Integer qtdTotalQuestoesPorExercicioId(Long usuarioId, Long id) {
+        return exercicioRepository.qtdTotalQuestoesCertasPorExercicioId(usuarioId, id, VALOR_MINIMO_CORRETO);
+    }
+
 }

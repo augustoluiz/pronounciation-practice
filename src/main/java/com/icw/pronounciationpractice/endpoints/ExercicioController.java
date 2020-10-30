@@ -37,4 +37,15 @@ public class ExercicioController {
         return exercicioMapper.map(exercicioService.findByUnidadeId(id));
     }
 
+    @GetMapping("/totalQuestaoById/{id}")
+    public Integer totalQuestaoById(@PathVariable("id") Long id){
+        return exercicioService.qtdTotalQuestoesPorExercicioId(id);
+    }
+
+    @GetMapping("/totalQuestaoCertaById/{id}/{usuarioId}")
+    public Integer totalQuestaoById(@PathVariable("id") Long id,
+                                    @PathVariable("usuarioId") Long usuarioId){
+        return exercicioService.qtdTotalQuestoesPorExercicioId(usuarioId, id);
+    }
+
 }
